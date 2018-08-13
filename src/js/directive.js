@@ -181,8 +181,8 @@
 				images 			: 	'=',		// []
 				methods 		: 	'=?',		// {}
 				conf 			: 	'=?',		// {}
-				entityName		:	'=?',		// entityName
-				entityAddress	:	'=?',		// entityAddress
+				title		:	'=?',		// title
+				subtitle	:	'=?',		// subtitle
 
 				thumbnails 		: 	'=?',		// true|false
 				thumbSize		: 	'=?', 		// px
@@ -249,8 +249,8 @@
 									// Galleria container
 									'<div class="galleria">'+
 
-										'<div class="entity-name" ng-if="entityName" ng-bind-html="entityName"></div> '+
-										'<div class="entity-address"  ng-if="entityAddress" ng-bind-html="entityAddress"></div>'+
+										'<div class="entity-name" ng-if="title" ng-bind-html="title"></div> '+
+										'<div class="entity-address"  ng-if="subtitle" ng-bind-html="subtitle"></div>'+
 
 										// Images container
 										'<div class="galleria-images img-anim-{{imgAnim}} img-move-dir-{{_imgMoveDirection}}">'+
@@ -423,8 +423,8 @@
 					scope.images 	 	 = 	(scope.images 		!= undefined) ? scope.images 	 	: 	[];
 					scope.methods 	 	 = 	(scope.methods 		!= undefined) ? scope.methods 	 	: 	{};
 					scope.conf 	 		 = 	(scope.conf 		!= undefined) ? scope.conf 		 	: 	{};
-					scope.entityName 	 = 	(scope.entityName	!= undefined) ? scope.entityName 	: 	"";
-					scope.entityAddress = 	(scope.entityAddress!= undefined)? scope.entityAddress: 	"";
+					scope.title 	 = 	(scope.title	!= undefined) ? scope.title 	: 	"";
+					scope.subtitle = 	(scope.subtitle!= undefined)? scope.subtitle: 	"";
 
 					// setting options
 					scope.$watchCollection('conf', function(conf){
