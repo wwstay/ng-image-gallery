@@ -181,6 +181,8 @@
 				images 			: 	'=',		// []
 				methods 		: 	'=?',		// {}
 				conf 			: 	'=?',		// {}
+				entity_name		:	'=?',		// entity_name
+				entity_address	:	'=?',		// entity_address
 
 				thumbnails 		: 	'=?',		// true|false
 				thumbSize		: 	'=?', 		// px
@@ -246,6 +248,9 @@
 
 									// Galleria container
 									'<div class="galleria">'+
+
+										'<div class="entity-name" ng-if="entity_name" ng-bind-html="entity_name"></div> '+
+										'<div class="entity-address"  ng-if="entity_address" ng-bind-html="entity_address"></div>'+
 
 										// Images container
 										'<div class="galleria-images img-anim-{{imgAnim}} img-move-dir-{{_imgMoveDirection}}">'+
@@ -415,9 +420,11 @@
 					**/
 
 					// Modify scope models
-					scope.images 	 	 = 	(scope.images 		!= undefined) ? scope.images 	 : 	[];
-					scope.methods 	 	 = 	(scope.methods 		!= undefined) ? scope.methods 	 : 	{};
-					scope.conf 	 		 = 	(scope.conf 		!= undefined) ? scope.conf 		 : 	{};
+					scope.images 	 	 = 	(scope.images 		!= undefined) ? scope.images 	 	: 	[];
+					scope.methods 	 	 = 	(scope.methods 		!= undefined) ? scope.methods 	 	: 	{};
+					scope.conf 	 		 = 	(scope.conf 		!= undefined) ? scope.conf 		 	: 	{};
+					scope.entity_name 	 = 	(scope.entity_name	!= undefined) ? scope.entity_name 	: 	"";
+					scope.entity_address = 	(scope.entity_address!= undefined)? scope.entity_address: 	"";
 
 					// setting options
 					scope.$watchCollection('conf', function(conf){
