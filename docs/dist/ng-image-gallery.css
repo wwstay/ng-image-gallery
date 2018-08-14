@@ -195,8 +195,9 @@
           display: inline-block;
           text-shadow: none;
           font-weight: normal;
-          width: 60px;
-          height: 30px;
+          width: 70px;
+          border-radius: 5px;
+          padding: 10px;
           overflow: hidden;
           cursor: pointer;
           text-decoration: none;
@@ -421,13 +422,16 @@
               .ng-image-gallery .ng-image-gallery-modal .ng-image-gallery-content .galleria .galleria-bubbles-wrapper > .galleria-bubbles span.img-bubble {
                 box-sizing: border-box;
                 border: 1px solid transparent;
-                transition: border 0.3s ease-in-out, margin 0.3s ease-in-out; }
+                transition: border 0.3s ease-in-out, margin 0.3s ease-in-out;
+                width: 125%; }
                 .ng-image-gallery .ng-image-gallery-modal .ng-image-gallery-content .galleria .galleria-bubbles-wrapper > .galleria-bubbles span.img-bubble.active {
                   border: 1px solid #fff; }
     .ng-image-gallery .ng-image-gallery-modal .ng-image-gallery-errorplaceholder {
       position: absolute;
       top: 0;
       bottom: 0;
+      font-size: 30px;
+      color: #fff;
       left: 80px;
       right: 80px;
       z-index: 1;

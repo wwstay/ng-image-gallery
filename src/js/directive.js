@@ -24,7 +24,7 @@
 			piracy 			: 	false,
 			imgAnim 		: 	'fadeup',
 			textValues: {
-			    imageLoadErrorMsg       : 'Error when loading the image!',
+			    imageLoadErrorMsg       : 'Could not load the image',
 			    deleteButtonTitle       : 'Delete this image...',
 			    editButtonTitle         : 'Edit this image...',
 			    closeButtonTitle        : 'Close',
@@ -181,8 +181,11 @@
 				images 			: 	'=',		// []
 				methods 		: 	'=?',		// {}
 				conf 			: 	'=?',		// {}
-				title		:	'=?',		// title
-				subtitle	:	'=?',		// subtitle
+				title			:	'=?',		// title
+				subtitle		:	'=?',		// subtitle
+
+				width			:	'=?',		//width
+				height			:	'=?',		//height
 
 				thumbnails 		: 	'=?',		// true|false
 				thumbSize		: 	'=?', 		// px
@@ -268,14 +271,14 @@
 										// Bubble navigation container
 										'<div class="galleria-bubbles-wrapper" ng-if="bubbles && !imgBubbles" ng-hide="images.length == 1" ng-style="{\'height\' : bubbleSize+\'px\'}" bubble-auto-fit>'+
 											'<div class="galleria-bubbles" bubble-auto-scroll ng-style="{\'margin-left\': _bubblesContainerMarginLeft}">'+
-												'<span class="galleria-bubble" ng-click="_setActiveImg(image);" ng-repeat="image in images track by image.id" ng-class="{active : (_activeImg == image)}" ng-style="{\'width\' : bubbleSize+\'px\', \'height\' : bubbleSize+\'px\', margin: _bubbleMargin}"></span>'+
+												'<span class="galleria-bubble" ng-click="_setActiveImg(image);" ng-repeat="image in images track by image.id" ng-class="{active : (_activeImg == image)}" ng-style="{\'width\' : width+\'px\', \'height\' : height+\'px\', margin: _bubbleMargin}"></span>'+
 											'</div>'+
 										'</div>'+
 
 										// Image bubble navigation container
 										'<div class="galleria-bubbles-wrapper" ng-if="bubbles && imgBubbles" ng-hide="images.length == 1" ng-style="{\'height\' : bubbleSize+\'px\'}" bubble-auto-fit>'+
 											'<div class="galleria-bubbles" bubble-auto-scroll ng-style="{\'margin-left\': _bubblesContainerMarginLeft}">'+
-												'<span class="galleria-bubble img-bubble" ng-click="_setActiveImg(image);" ng-repeat="image in images track by image.id" ng-class="{active : (_activeImg == image)}" show-image-async="{{image.bubbleUrl || image.thumbUrl || image.url}}" async-kind="bubble" ng-style="{\'width\' : bubbleSize+\'px\', \'height\' : bubbleSize+\'px\', \'border-width\' : bubbleSize/10+\'px\', margin: _bubbleMargin}"></span>'+
+												'<span class="galleria-bubble img-bubble" ng-click="_setActiveImg(image);" ng-repeat="image in images track by image.id" ng-class="{active : (_activeImg == image)}" show-image-async="{{image.bubbleUrl || image.thumbUrl || image.url}}" async-kind="bubble" ng-style="{\'width\' : width+\'px\', \'height\' : height+\'px\', \'border-width\' : bubbleSize/10+\'px\', margin: _bubbleMargin}"></span>'+
 											'</div>'+
 										'</div>'+
 
@@ -420,11 +423,13 @@
 					**/
 
 					// Modify scope models
-					scope.images 	 	 = 	(scope.images 		!= undefined) ? scope.images 	 	: 	[];
-					scope.methods 	 	 = 	(scope.methods 		!= undefined) ? scope.methods 	 	: 	{};
-					scope.conf 	 		 = 	(scope.conf 		!= undefined) ? scope.conf 		 	: 	{};
-					scope.title 	 = 	(scope.title	!= undefined) ? scope.title 	: 	"";
-					scope.subtitle = 	(scope.subtitle!= undefined)? scope.subtitle: 	"";
+					scope.images 	 	 = 	(scope.images 	!= undefined) ? scope.images 	: 	[];
+					scope.methods 	 	 = 	(scope.methods 	!= undefined) ? scope.methods 	: 	{};
+					scope.conf 	 		 = 	(scope.conf 	!= undefined) ? scope.conf 		: 	{};
+					scope.title 	 	 = 	(scope.title	!= undefined) ? scope.title 	: 	"";
+					scope.subtitle 		 = 	(scope.subtitle != undefined) ? scope.subtitle	: 	"";
+					scope.width 		 = 	(scope.width != undefined) ? scope.width	: 	100;
+					scope.height 		 = 	(scope.height != undefined) ? scope.height	: 	70;
 
 					// setting options
 					scope.$watchCollection('conf', function(conf){
