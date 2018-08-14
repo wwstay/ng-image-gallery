@@ -421,7 +421,6 @@
                   background-color: #fff; }
               .ng-image-gallery .ng-image-gallery-modal .ng-image-gallery-content .galleria .galleria-bubbles-wrapper > .galleria-bubbles span.img-bubble {
                 box-sizing: border-box;
-                border: 1px solid transparent;
                 transition: border 0.3s ease-in-out, margin 0.3s ease-in-out;
                 width: 125%; }
                 .ng-image-gallery .ng-image-gallery-modal .ng-image-gallery-content .galleria .galleria-bubbles-wrapper > .galleria-bubbles span.img-bubble.active {
