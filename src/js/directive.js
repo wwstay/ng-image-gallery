@@ -222,9 +222,11 @@
 								// (hide for inline gallery)
 								'<div class="ng-image-gallery-backdrop" ng-if="!inline"></div>'+
 
+
 								// Gallery contents container
 								// (hide when image is loading)
-								'<div class="ng-image-gallery-content" ng-show="!imgLoading" ng-click="backgroundClose($event);">'+
+								// '<div class="ng-image-gallery-content" ng-show="!imgLoading" ng-click="backgroundClose($event);">'+
+								'<div class="ng-image-gallery-content" ng-click="backgroundClose($event);">'+
 
 									// actions icons container
 									'<div class="actions-icons-container">'+
@@ -255,10 +257,24 @@
 										'<div class="entity-name" ng-if="title" ng-bind-html="title"></div> '+
 										'<div class="entity-address"  ng-if="subtitle" ng-bind-html="subtitle"></div>'+
 
+										// Loading animation overlay container
+										// (show when image is loading)
+										'<div class="ng-image-gallery-loader" ng-show="imgLoading">'+
+										'<div class="spinner">'+
+											'<div class="rect1"></div>'+
+											'<div class="rect2"></div>'+
+											'<div class="rect3"></div>'+
+											'<div class="rect4"></div>'+
+											'<div class="rect5"></div>'+
+										'</div>'+
+										'</div>'+
+
 										// Images container
-										'<div class="galleria-images img-anim-{{imgAnim}} img-move-dir-{{_imgMoveDirection}}">'+
+										'<div class="galleria-images img-anim-{{imgAnim}} img-move-dir-{{_imgMoveDirection}}" ng-show="!imgLoading">'+
 											'<img class="galleria-image" ng-right-click ng-repeat="image in images track by image.id" ng-if="_activeImg == image" ng-src="{{image.url}}" ondragstart="return false;" ng-attr-alt="{{image.alt || undefined}}"/>'+
 										'</div>'+
+
+										'<div class="galleria-images-count">{{_activeImageIndex+1}}/{{images.length}}</div>'+
 
 										// Image description container
 										'<div class="galleria-title-description-wrapper">'+
@@ -278,7 +294,7 @@
 										// Image bubble navigation container
 										'<div class="galleria-bubbles-wrapper" ng-if="bubbles && imgBubbles" ng-hide="images.length == 1" ng-style="{\'height\' : bubbleSize+\'px\'}" bubble-auto-fit>'+
 											'<div class="galleria-bubbles" bubble-auto-scroll ng-style="{\'margin-left\': _bubblesContainerMarginLeft}">'+
-												'<span class="galleria-bubble img-bubble" ng-click="_setActiveImg(image);" ng-repeat="image in images track by image.id" ng-class="{active : (_activeImg == image)}" show-image-async="{{image.bubbleUrl || image.thumbUrl || image.url}}" async-kind="bubble" ng-style="{\'width\' : width+\'px\', \'height\' : height+\'px\', \'border-width\' : bubbleSize/10+\'px\', margin: _bubbleMargin}"></span>'+
+												'<span class="galleria-bubble img-bubble" ng-click="_setActiveImg(image);" ng-repeat="image in images track by image.id" ng-class="{active : (_activeImg == image)}" show-image-async="{{image.bubbleUrl || image.thumbUrl || image.url}}" async-kind="bubble" ng-style="{\'width\' : width+\'px\', \'height\' : height+\'px\', \'border-width\' : 5+\'px\', margin: _bubbleMargin}"></span>'+
 											'</div>'+
 										'</div>'+
 
@@ -286,17 +302,6 @@
 
 								'</div>'+
 
-								// Loading animation overlay container
-								// (show when image is loading)
-								'<div class="ng-image-gallery-loader" ng-show="imgLoading">'+
-									'<div class="spinner">'+
-										'<div class="rect1"></div>'+
-										'<div class="rect2"></div>'+
-										'<div class="rect3"></div>'+
-										'<div class="rect4"></div>'+
-										'<div class="rect5"></div>'+
-									'</div>'+
-								'</div>'+
 
 								// (show when image cannot be loaded)
 								'<div class="ng-image-gallery-errorplaceholder" ng-show="imgError">'+
