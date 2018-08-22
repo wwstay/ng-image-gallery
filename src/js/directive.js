@@ -226,7 +226,7 @@
 								// Gallery contents container
 								// (hide when image is loading)
 								// '<div class="ng-image-gallery-content" ng-show="!imgLoading" ng-click="backgroundClose($event);">'+
-								'<div class="ng-image-gallery-content"  ng-show="!imgLoading" ng-click="backgroundClose($event);">'+
+								'<div class="ng-image-gallery-content"  ng-click="backgroundClose($event);">'+
 
 									// actions icons container
 									'<div class="actions-icons-container">'+
@@ -259,7 +259,7 @@
 
 
 										// Images container
-										'<div class="galleria-images img-anim-{{imgAnim}} img-move-dir-{{_imgMoveDirection}}" ng-show="!imgLoading">'+
+										'<div class="galleria-images img-anim-{{imgAnim}} img-move-dir-{{_imgMoveDirection}}">'+
 											'<img class="galleria-image" ng-right-click ng-repeat="image in images track by image.id" ng-if="_activeImg == image" ng-src="{{image.url}}" ondragstart="return false;" ng-attr-alt="{{image.alt || undefined}}"/>'+
 										'</div>'+
 
