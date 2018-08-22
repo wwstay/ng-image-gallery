@@ -226,7 +226,7 @@
 								// Gallery contents container
 								// (hide when image is loading)
 								// '<div class="ng-image-gallery-content" ng-show="!imgLoading" ng-click="backgroundClose($event);">'+
-								'<div class="ng-image-gallery-content" ng-click="backgroundClose($event);">'+
+								'<div class="ng-image-gallery-content"  ng-show="!imgLoading" ng-click="backgroundClose($event);">'+
 
 									// actions icons container
 									'<div class="actions-icons-container">'+
@@ -243,7 +243,7 @@
 										'<a class="ext-url" ng-repeat="image in images track by image.id" ng-if="_activeImg == image && image.extUrl" href="{{image.extUrl}}" target="_blank" title="{{textValues.externalLinkButtonTitle}}"></a>' +
 
 										// Close Icon (hidden in inline gallery)
-										'<div class="close" ng-click="methods.close();" ng-if="!inline"  title="{{textValues.closeButtonTitle}}">Close</div>' +
+										'<div class="close" ng-click="methods.close();" ng-if="!inline"  title="{{textValues.closeButtonTitle}}">CLOSE</div>' +
 									'</div>'+
 
 									// Prev-Next Icons
@@ -257,17 +257,6 @@
 										'<div class="entity-name" ng-if="title" ng-bind-html="title"></div> '+
 										'<div class="entity-address"  ng-if="subtitle" ng-bind-html="subtitle"></div>'+
 
-										// Loading animation overlay container
-										// (show when image is loading)
-										'<div class="ng-image-gallery-loader" ng-show="imgLoading">'+
-										'<div class="spinner">'+
-											'<div class="rect1"></div>'+
-											'<div class="rect2"></div>'+
-											'<div class="rect3"></div>'+
-											'<div class="rect4"></div>'+
-											'<div class="rect5"></div>'+
-										'</div>'+
-										'</div>'+
 
 										// Images container
 										'<div class="galleria-images img-anim-{{imgAnim}} img-move-dir-{{_imgMoveDirection}}" ng-show="!imgLoading">'+
@@ -302,6 +291,17 @@
 
 								'</div>'+
 
+								// Loading animation overlay container
+								// (show when image is loading)
+								'<div class="ng-image-gallery-loader" ng-show="imgLoading">'+
+								'<div class="spinner">'+
+									'<div class="rect1"></div>'+
+									'<div class="rect2"></div>'+
+									'<div class="rect3"></div>'+
+									'<div class="rect4"></div>'+
+									'<div class="rect5"></div>'+
+								'</div>'+
+								'</div>'+
 
 								// (show when image cannot be loaded)
 								'<div class="ng-image-gallery-errorplaceholder" ng-show="imgError">'+
