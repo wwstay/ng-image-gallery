@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "no-console": "off"
+  },
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "_": true,
+    "angular":true
+  }
+}
