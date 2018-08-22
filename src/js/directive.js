@@ -294,13 +294,13 @@
 								// Loading animation overlay container
 								// (show when image is loading)
 								'<div class="ng-image-gallery-loader" ng-show="imgLoading">'+
-								'<div class="spinner">'+
-									'<div class="rect1"></div>'+
-									'<div class="rect2"></div>'+
-									'<div class="rect3"></div>'+
-									'<div class="rect4"></div>'+
-									'<div class="rect5"></div>'+
-								'</div>'+
+									'<div class="spinner">'+
+										'<div class="rect1"></div>'+
+										'<div class="rect2"></div>'+
+										'<div class="rect3"></div>'+
+										'<div class="rect4"></div>'+
+										'<div class="rect5"></div>'+
+									'</div>'+
 								'</div>'+
 
 								// (show when image cannot be loaded)
