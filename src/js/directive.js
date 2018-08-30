@@ -29,7 +29,7 @@
 			    editButtonTitle         : 'Edit this image...',
 			    closeButtonTitle        : 'Close',
 			    externalLinkButtonTitle : 'Open image in new tab...'			    
-			}			
+			}
 		};
 
 		return{
@@ -181,7 +181,7 @@
 				images 			: 	'=',		// []
 				methods 		: 	'=?',		// {}
 				conf 			: 	'=?',		// {}
-				title			:	'=?',		// title
+				name			:	'=?',		// name
 				subtitle		:	'=?',		// subtitle
 
 				width			:	'=?',		//width
@@ -243,7 +243,7 @@
 										'<a class="ext-url" ng-repeat="image in images track by image.id" ng-if="_activeImg == image && image.extUrl" href="{{image.extUrl}}" target="_blank" title="{{textValues.externalLinkButtonTitle}}"></a>' +
 
 										// Close Icon (hidden in inline gallery)
-										'<div class="close" ng-click="methods.close();" ng-if="!inline"  title="{{textValues.closeButtonTitle}}">CLOSE</div>' +
+										'<div class="close" ng-click="methods.close();" ng-if="!inline">{{textValues.closeButtonTitle}}</div>' +
 									'</div>'+
 
 									// Prev-Next Icons
@@ -254,7 +254,7 @@
 									// Galleria container
 									'<div class="galleria">'+
 
-										'<div class="entity-name" ng-if="title" ng-bind-html="title"></div> '+
+										'<div class="entity-name" ng-if="name" ng-bind-html="name"></div> '+
 										'<div class="entity-address"  ng-if="subtitle" ng-bind-html="subtitle"></div>'+
 
 
@@ -431,10 +431,10 @@
 					scope.images 	 	 = 	(scope.images 	!= undefined) ? scope.images 	: 	[];
 					scope.methods 	 	 = 	(scope.methods 	!= undefined) ? scope.methods 	: 	{};
 					scope.conf 	 		 = 	(scope.conf 	!= undefined) ? scope.conf 		: 	{};
-					scope.title 	 	 = 	(scope.title	!= undefined) ? scope.title 	: 	"";
+					scope.name 	 	 	 = 	(scope.name		!= undefined) ? scope.name 		: 	"";
 					scope.subtitle 		 = 	(scope.subtitle != undefined) ? scope.subtitle	: 	"";
-					scope.width 		 = 	(scope.width != undefined) ? scope.width	: 	100;
-					scope.height 		 = 	(scope.height != undefined) ? scope.height	: 	70;
+					scope.width 		 = 	(scope.width 	!= undefined) ? scope.width		: 	100;
+					scope.height 		 = 	(scope.height 	!= undefined) ? scope.height	: 	70;
 
 					// setting options
 					scope.$watchCollection('conf', function(conf){
