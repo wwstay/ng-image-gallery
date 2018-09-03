@@ -27,7 +27,7 @@
 			    imageLoadErrorMsg       : 'Could not load the image',
 			    deleteButtonTitle       : 'Delete this image...',
 			    editButtonTitle         : 'Edit this image...',
-			    closeButtonTitle        : 'Close',
+			    closeButtonTitle        : 'CLOSE',
 			    externalLinkButtonTitle : 'Open image in new tab...'			    
 			}
 		};
