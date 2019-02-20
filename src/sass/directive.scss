@@ -2,6 +2,8 @@
 
 .body-overflow-hidden{
 	overflow: hidden !important;
+	position: fixed !important;
+	height: 100%;
 }
 
 .ng-image-gallery{
