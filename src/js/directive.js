@@ -595,7 +595,7 @@
 								scope.methods.prev();
 							});
 						}
-						else if(event.which == keys.esc){
+						else if(event.which == keys.esc && scope.opened){
 							$timeout(function(){
 								scope.methods.close();
 							});
