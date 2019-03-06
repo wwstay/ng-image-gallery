@@ -2,6 +2,10 @@
 
 .body-overflow-hidden{
 	overflow: hidden !important;
+	//Fix for scroll in mobile safari
+	position: fixed;
+	width: 100%;
+	height: 100%;
 }
 
 .ng-image-gallery{
@@ -12,7 +16,7 @@
 	}
 	.entity-name{
 		color: #fff;
-		margin-top: 25px;
+		margin-top: 50px;
 		font-size: 24px;
 		width: 100%;
 	}
