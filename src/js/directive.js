@@ -585,12 +585,12 @@
 						// If inline modal, do not interact
 						if(scope.inline) return;
 
-						if(event.which == keys.right || event.which == keys.enter){
+						if(event.which == keys.right && scope.opened){
 							$timeout(function(){
 								scope.methods.next();
 							});
 						}
-						else if(event.which == keys.left){
+						else if(event.which == keys.left && scope.opened){
 							$timeout(function(){
 								scope.methods.prev();
 							});
