@@ -536,7 +536,7 @@
 						text-align: center;
 						white-space: nowrap;
 						transition: margin-left 0.3s;
-
+						overflow-x: auto;
 						span{
 							flex: none;
 							position:relative;
