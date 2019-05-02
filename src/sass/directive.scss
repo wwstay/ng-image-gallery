@@ -3,7 +3,7 @@
 .body-overflow-hidden{
 	overflow: hidden !important;
 	//Fix for scroll in mobile safari
-	position: fixed;
+	position: fixed !important;
 	width: 100%;
 	height: 100%;
 }
