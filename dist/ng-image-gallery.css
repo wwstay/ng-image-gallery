@@ -46,7 +46,10 @@
     transform: scale(0, 0) translateX(0px); } }
 
 .body-overflow-hidden {
-  overflow: hidden !important; }
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100%;
+  height: 100%; }
 
 .ng-image-gallery {
   outline: none;
@@ -57,7 +60,7 @@
     outline: none; }
   .ng-image-gallery .entity-name {
     color: #fff;
-    margin-top: 25px;
+    margin-top: 50px;
     font-size: 24px;
     width: 100%; }
   .ng-image-gallery .entity-address {
@@ -408,7 +411,8 @@
             display: block;
             text-align: center;
             white-space: nowrap;
-            transition: margin-left 0.3s; }
+            transition: margin-left 0.3s;
+            overflow-x: auto; }
             .ng-image-gallery .ng-image-gallery-modal .ng-image-gallery-content .galleria .galleria-bubbles-wrapper > .galleria-bubbles span {
               -ms-flex: none;
                   flex: none;
